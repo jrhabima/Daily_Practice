@@ -10,6 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 #Abstract
+
+**TO-DO: add in parallel computing stuff/HPC** 
 Breast Cancer has been a threatening disease for decades and numerous reseaches have been done to emprove its diagnosis and treatment, but all the current method are based on a qualitative analysis of the tumor and the pathology results may take days or weeks. Unfortunately, the later the results from surgery are reportd, the more likely it is for a patient to undergo a second surgery.
 
 This reseach focuses on a quantitative analysis of a terahertz(thz) image of a freshly excised breast tumor in order to produce results in almost real time.
