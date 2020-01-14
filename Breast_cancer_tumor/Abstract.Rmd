@@ -1,0 +1,24 @@
+---
+title: "Abstract"
+author: "Remy"
+date: "1/8/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Abstract
+Breast Cancer has been a threatening disease for decades and numerous reseaches have been done to emprove its diagnosis and treatment, but all the current method are based on a qualitative analysis of the tumor and the pathology results may take days or weeks. Unfortunately, the later the results from surgery are reportd, the more likely it is for a patient to undergo a second surgery.
+
+This reseach focuses on a quantitative analysis of a terahertz(thz) image of a freshly excised breast tumor in order to produce results in almost real time.
+Our quantitative data consists of thz signal at each pixel location in the image, which can differ dpending on the type of tissues at the location. Previous research have shown that thz signal reflected from a cancer, fat and miscles tissues are are different. Therefore, it possible to classify tissue types as cancer, fat or muscles based on the distribution of signals at each pixel location in the image.
+
+Knowing that pixels in the same tissue type have the same signal and assuming that tissues of same type are morelikely to be in the same location, we can conclude that there is an spatial autocorrelation between pixels, wich led us to suggest an patial autoregressive model for our data. Moreover, pixels can have different distribution based on the type of tissues cells in the human breast. Therefore, we have also proposed a Gaussian mixture model (GMM) to analyze terahertz image data of breast cancer tumor.
+
+The analysis of a pathology block of murine cancer tumor using Autoregressive model, provides a clear visual clustering processes for cancer cells in a terahertz image that depicts significant similarities to the clustering found in the pathology image. However, in a quantitative analysis, our model provides a 90% predictive accuracy for cancer cells in a terahertz image, compared to the pathology results. 
+
+Now, While our collaborators are dealing with improvement of thz imaging, our future plan in statistical ananlysis is to improve our autoregressive model and learning how to implement GMM and figure out how to include many samples in our models.
+
+
