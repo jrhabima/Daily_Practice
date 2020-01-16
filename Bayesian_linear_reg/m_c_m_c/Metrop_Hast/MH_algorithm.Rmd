@@ -1,0 +1,81 @@
+---
+title: "Metrop_hast"
+author: "Remy"
+date: "1/16/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Create the data
+
+```{r, }
+
+
+```
+
+# Prior distribution
+
+```{r,}
+prior <- function(param){  
+  beta_0    <- param[1] 
+  beta1     <- param[2]    
+  sigma_sq  <- param[3]   
+  
+  prior_beta_0 <- dunif(a, min = 0, max = 10, log = T)   
+  prior_beta1  <- dnorm(b, sd = 5, log = T)    
+  prior_sigma  <- dunif(sigma_sq , min=0, max=30, log = T)  
+  
+  return(prior_beta_0 + prior_beta1  + prior_sigma)
+}
+
+```
+# Likelihood 
+
+```{r,}
+likelihood <- function(param){   
+  beta_0    <- param[1] 
+  beta1     <- param[2]    
+  sigma_sq  <- param[3]  
+  
+  y_pred = a*x + b 
+  log_likelihhod = sum(dnorm(y, mean = y_pred, sd = sqrt(sigma_sq), log = T))
+  return(log_likelihhod)   
+}
+```
+
+# Posterior
+
+```{r, }
+posterior <- function(param){
+  
+  return(prior + likelihood)
+}
+```
+# Metropolis Hastings algorithm
+
+```{r, }
+proposal <- function(param){ 
+  return(c(rnorm(2, mean = param[1:2] , sd= c(0.5 ,0.5)),
+           rtruncnorm(1, 0, Inf, mean = param[3], sd = 0.5)
+  ))
+  
+}
+MH_MCMC <- function(startvalue, niter){
+  chain     <- array(dim = c(iterations, 3))
+  chain[1,] <- startvalue 
+  for (i in 2 : niter){ 
+    proposed  <- proposal(chain[i-1,])
+    accep_pob <- exp(posterior(proposed) - posterior(chain[i-1,]))
+    if (runif(1) <- accep_prob){ 
+      chain[i,] <- proposed 
+    }else{  
+      chain[i,] <- chain[i-1,] 
+    }
+  } 
+  return(chain)
+}
+
+```
+
