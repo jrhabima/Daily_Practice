@@ -21,6 +21,8 @@ Knowing that pixels in the same tissue type have the same signal and assuming th
 
 The analysis of a pathology block of murine cancer tumor using Autoregressive model, provides a clear visual clustering processes for cancer cells in a terahertz image that depicts significant similarities to the clustering found in the pathology image. However, in a quantitative analysis, our model provides a 90% predictive accuracy for cancer cells in a terahertz image, compared to the pathology results. 
 
-Now, While our collaborators are dealing with improvement of thz imaging, our future plan in statistical ananlysis is to improve our autoregressive model and learning how to implement GMM and figure out how to include many samples in our models.
+Now, While our collaborators are dealing with improvement of thz imaging, our future plan in statistical ananlysis is to improve our autoregressive model and learning how to implement GMM and figure out how to include many samples in our models. This emprovement is expected to involve some computational challenges since each image contains around 120x120 pixels, which results into a large dataset that also requires compex models for a pixel by pixel analysis. Therefore, a sequential analysis of our sample images requires a high computational cost. This is mainly why we need HPC to be able to parallelize our computation so that they can be executed simulteneously. 
+
+ 
 
 
